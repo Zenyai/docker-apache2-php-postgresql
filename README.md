@@ -36,9 +36,14 @@ To check what is the IP of your container just run the command below:
     
 ##For vBitter
 
-Make sure you have PHP & Composer install in your Mac, if not download Composer and run the following command
+Run this to setup the database and composer
 
 ```
+
+sudo docker exec -it <containerIdOrName> bash
+
+cd /app
+
 php -r "readfile('https://getcomposer.org/installer');" | php
 
 php composer.phar install && php composer.phar update
