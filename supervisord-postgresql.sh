@@ -17,6 +17,9 @@ if [ ! -d $POSTGRESQL_DATA ]; then
     ln -s /etc/ssl/private/ssl-cert-snakeoil.key $POSTGRESQL_DATA/server.key
 fi
 
+# Create docker database
+$POSTGRESQL_SINGLE <<< "CREATE DATABASE docker;" > /dev/null
+
 # Setting the default password
 $POSTGRESQL_SINGLE <<< "ALTER USER postgres WITH PASSWORD 'change@this*passw0rd';" > /dev/null
 
