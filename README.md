@@ -43,6 +43,8 @@ php -r "readfile('https://getcomposer.org/installer');" | php
 
 php composer.phar install && php composer.phar update
 
+php artisan migrate
+
 ``` 
 
 What does this command?
