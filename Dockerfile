@@ -30,6 +30,9 @@ RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 # RUN cd /app && php -r "readfile('https://getcomposer.org/installer');" | php && php composer.phar install
 
 # PostgreSQL data folders
+RUN mkdir -p /var/run/postgresql/9.3-main.pg_stat_tmp
+RUN chown postgres /var/run/postgresql/9.3-main.pg_stat_tmp
+RUN chgrp postgres /var/run/postgresql/9.3-main.pg_stat_tmp
 RUN mkdir -p /var/lib/postgresql && mkdir -p /var/log/postgresql
 VOLUME ["/var/log/postgresql", "/var/lib/postgresql"]
 
