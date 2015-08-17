@@ -20,6 +20,7 @@ ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
 ADD supervisord-apache2.sh /supervisord-apache2.sh
 ADD supervisord-postgresql.conf /etc/supervisor/conf.d/supervisord-postgresql.conf
 ADD supervisord-postgresql.sh /supervisord-postgresql.sh
+ADD enable_uuid.sh /enable_uuid.sh
 ADD start.sh /start.sh
 RUN chmod 755 /*.sh
 
